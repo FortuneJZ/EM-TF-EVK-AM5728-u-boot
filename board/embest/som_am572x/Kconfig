@@ -1,0 +1,23 @@
+if TARGET_SOM_AM572X
+
+config SYS_BOARD
+	default "som_am572x"
+
+config SYS_VENDOR
+	default "embest"
+
+config SYS_CONFIG_NAME
+	default "som_am572x"
+
+config CONS_INDEX
+        int "UART used for console"
+        range 1 6
+        default 3
+        help
+          The AM57x (and DRA7xx) SoC has a total of 6 UARTs available to it.
+          Depending on your specific board you may want something other than UART3
+          here.
+
+source "board/embest/common/Kconfig"
+
+endif

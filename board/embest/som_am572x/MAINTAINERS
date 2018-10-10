@@ -1,0 +1,7 @@
+SOM_AM572X
+M:	Alwyn Tan <alwyn.tan@embest-tech.com>
+S:	Maintained
+F:	board/embest/common/
+F:	board/embest/som_am572x/
+F:	include/configs/som_am572x.h
+F:	configs/som_am572x_defconfig
