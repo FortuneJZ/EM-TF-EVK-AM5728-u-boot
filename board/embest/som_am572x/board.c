@@ -81,7 +81,7 @@ const struct omap_sysinfo sysinfo = {
 };
 
 static const struct dmm_lisa_map_regs beagle_x15_lisa_regs = {
-	.dmm_lisa_map_3 = 0x80740300,
+	.dmm_lisa_map_3 = 0x80640100,
 	.is_ma_present  = 0x1
 };
 
@@ -819,7 +819,7 @@ static struct cpsw_slave_data cpsw_slaves[] = {
 	{
 		.slave_reg_ofs	= 0x308,
 		.sliver_reg_ofs	= 0xdc0,
-		.phy_addr	= 6,
+		.phy_addr	= 1,
 	},
 };
 
@@ -829,7 +829,7 @@ static struct cpsw_platform_data cpsw_data = {
 	.mdio_div		= 0xff,
 	.channels		= 8,
 	.cpdma_reg_ofs		= 0x800,
-	.slaves			= 1,
+	.slaves			= 0,
 	.slave_data		= cpsw_slaves,
 	.ale_reg_ofs		= 0xd00,
 	.ale_entries		= 1024,

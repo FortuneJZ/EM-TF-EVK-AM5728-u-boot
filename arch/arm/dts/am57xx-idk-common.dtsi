@@ -15,7 +15,7 @@
 	};
 
 	chosen {
-		stdout-path = &uart3;
+		stdout-path = &uart1;
 	};
 
 	vmain: fixedregulator-vmain {
@@ -263,6 +263,12 @@
 			       &dra7_pmx_core 0x248>;
 };
 
+&uart1 {
+        status = "okay";
+        interrupts-extended = <&crossbar_mpu GIC_SPI 67 IRQ_TYPE_LEVEL_HIGH
+                               &dra7_pmx_core 0x3E0>;
+};
+
 &rtc {
 	status = "okay";
 	ext-clk-src;
@@ -274,16 +280,16 @@
 };
 
 &cpsw_emac0 {
-	phy_id = <&davinci_mdio>, <0>;
+	phy_id = <&davinci_mdio>, <4>;
 	phy-mode = "rgmii";
 	dual_emac_res_vlan = <1>;
 };
 
-&cpsw_emac1 {
-	phy_id = <&davinci_mdio>, <1>;
-	phy-mode = "rgmii";
-	dual_emac_res_vlan = <2>;
-};
+//&cpsw_emac1 {
+//	phy_id = <&davinci_mdio>, <1>;
+//	phy-mode = "rgmii";
+//	dual_emac_res_vlan = <2>;
+//};
 
 &usb2_phy1 {
 	phy-supply = <&ldousb_reg>;
